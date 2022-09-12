@@ -43,4 +43,8 @@
   font-family: inherit;
   cursor: pointer;
 }
+
+.button-grp button:hover {
+  color: red;
+}
 </style>

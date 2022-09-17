@@ -19,7 +19,7 @@
   width: 152px;
   height: 93px;
   border: 1px solid #707070;
-  margin: 20px;
+  margin: 20px auto;
 }
 
 .button-grp {

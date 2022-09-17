@@ -76,7 +76,7 @@ p {
   position: relative;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
   .skill-section {
     margin: 4rem 0;
   }

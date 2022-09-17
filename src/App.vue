@@ -36,6 +36,7 @@ export default {
 <style>
 .items-container {
   background: white;
+  transition: background 1s ease-in-out;
 }
 .dark {
   background: #0a1015;

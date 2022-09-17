@@ -46,6 +46,7 @@ h1 span {
   width: 100%;
   background-color: white;
   z-index: 100;
+  transition: background 1s ease-in-out;
 }
 
 .menu {

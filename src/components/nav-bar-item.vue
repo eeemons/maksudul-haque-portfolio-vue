@@ -36,6 +36,11 @@ h1 span {
   justify-content: space-between;
   height: 50px;
   padding: 1em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 100;
 }
 
 .menu {

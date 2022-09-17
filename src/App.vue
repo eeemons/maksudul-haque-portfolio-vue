@@ -1,9 +1,9 @@
 <template>
-  <div class="items-container">
-    <AppNavBar />
-    <PortfolioItem />
-    <AboutItem />
-    <FooterItem />
+  <div class="items-container" :class="mode === 'dark' ? 'dark' : 'light'">
+    <AppNavBar :mode="mode" @toggle="toggle" />
+    <PortfolioItem :mode="mode" />
+    <AboutItem :mode="mode" />
+    <FooterItem :mode="mode" />
   </div>
 </template>
 
@@ -16,7 +16,28 @@ import FooterItem from "./components/footer-item.vue";
 export default {
   name: "App",
   components: { AppNavBar, PortfolioItem, AboutItem, FooterItem },
+  data() {
+    return {
+      mode: "lite",
+    };
+  },
+  methods: {
+    toggle() {
+      if (this.mode === "dark") {
+        this.mode = "lite";
+      } else {
+        this.mode = "dark";
+      }
+    },
+  },
 };
 </script>
 
-<style></style>
+<style>
+.items-container {
+  background: white;
+}
+.dark {
+  background: #0a1015;
+}
+</style>

@@ -1,9 +1,13 @@
-<script></script>
+<script>
+export default {
+  props: ["mode"],
+};
+</script>
 
 <template>
   <div>
     <nav>
-      <section class="top-nav">
+      <section class="top-nav" :class="mode">
         <h1>Maksudul <span>Haque</span></h1>
         <input id="menu-toggle" type="checkbox" />
         <label class="menu-button-container" for="menu-toggle">
@@ -13,7 +17,7 @@
           <li>Portfolio</li>
           <li>Works</li>
           <li>Education</li>
-          <li>Dark</li>
+          <li @click="$emit('toggle')" class="mode-switcher">{{ mode }}</li>
         </ul>
       </section>
     </nav>
@@ -25,6 +29,7 @@ h1,
 li {
   color: #707070;
 }
+
 h1 span {
   color: rgb(206, 32, 32);
 }
@@ -111,6 +116,19 @@ h1 span {
   transform: rotate(-405deg);
 }
 
+.mode-switcher {
+  text-transform: capitalize;
+}
+
+.dark {
+  background: #15202b;
+}
+.dark h1 {
+  color: white;
+}
+.dark li {
+  color: white;
+}
 @media (max-width: 700px) {
   .menu-button-container {
     display: flex;

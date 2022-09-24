@@ -3,7 +3,7 @@
     <AppNavBar :mode="mode" @toggle="toggle" />
     <PortfolioItem :mode="mode" />
     <AboutItem :mode="mode" />
-    <FooterItem :mode="mode" />
+    <FooterItem />
   </div>
 </template>
 

@@ -1,13 +1,14 @@
 <script>
 import WorkCard from "./Micro Components/work-card.vue";
+import TypeWriter from "./Micro Components/type-writer.vue";
 export default {
-  components: { WorkCard },
+  components: { WorkCard, TypeWriter },
 };
 </script>
 <template>
   <div>
     <section class="message-section">
-      <h1>UI/UX Designer and Front-end web developer</h1>
+      <TypeWriter />
       <p>Creating Your dream and then making your dream come to life</p>
       <p>A front-end web developer with a hobby of designing UI/UX</p>
     </section>

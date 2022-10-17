@@ -3,7 +3,12 @@
 <template>
   <div class="container">
     <div class="column column-one">
-      <p>Socials</p>
+      <div class="social-icons">
+        <img src="../assets/facebook.png" alt="" />
+        <img src="../assets/instagram.png" alt="" />
+        <img src="../assets/linkedin.png" alt="" />
+        <img src="../assets/github.png" alt="" />
+      </div>
       <p>Copyright Maksudul Haque</p>
       <p>Designed By Maksudul Haque</p>
     </div>
@@ -43,14 +48,26 @@ p:hover {
   overflow-x: hidden;
 }
 
-@media screen and (max-width: 425px) {
+.social-icons img {
+  margin: 3px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 426px) {
   h1,
   p,
   h2,
   h3,
   h4 {
     color: #707070;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   .container {
     flex-direction: column;
@@ -72,6 +89,17 @@ p:hover {
     position: absolute;
     right: 0;
     bottom: 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  h1,
+  p,
+  h2,
+  h3,
+  h4 {
+    color: #707070;
+    font-size: 0.8rem;
   }
 }
 </style>

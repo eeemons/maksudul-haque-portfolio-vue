@@ -31,7 +31,7 @@ h1 {
 .text-fill {
   background-color: #565656;
   font-family: "Silkscreen", cursive;
-  font-size: 5vw;
+  font-size: calc(10px + 5vw);
   text-transform: uppercase;
   position: relative;
   background-clip: text;

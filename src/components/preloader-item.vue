@@ -5,37 +5,100 @@ export default {
 </script>
 
 <template>
-  <div>
-    <span>↓</span>
-    <span style="--delay: 0.1s">↓</span>
-    <span style="--delay: 0.3s">↓</span>
-    <span style="--delay: 0.4s">↓</span>
-    <span style="--delay: 0.5s">↓</span>
+  <div class="container">
+    <h1 data-title="MaksudulHaque" class="text-fill">MaksudulHaque</h1>
   </div>
 </template>
 
 <style scoped>
-div {
-  display: flex;
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
+* {
+  font-family: "Silkscreen", cursive;
+}
+h1 {
+  font-size: 5vw;
+}
+.container {
   height: 100vh;
-  align-items: center;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: #eee;
 }
 
-@keyframes arrows {
-  0%,
-  100% {
-    color: black;
-    transform: translateY(0);
+.text-fill {
+  background-color: #565656;
+  font-family: "Silkscreen", cursive;
+  font-size: 5vw;
+  text-transform: uppercase;
+  position: relative;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.text-fill::before {
+  content: attr(data-title);
+  font-family: "Silkscreen", cursive;
+  background: black;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0%;
+  transition: all 1s ease-in-out;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation-name: name-animation;
+  animation-duration: 4s;
+}
+
+@keyframes name-animation {
+  0% {
+    background-color: black;
+    width: 0%;
+  }
+  10% {
+    background-color: black;
+    width: 10%;
+  }
+  20% {
+    background-color: black;
+    width: 20%;
+  }
+  30% {
+    background-color: black;
+    width: 30%;
+  }
+  40% {
+    background-color: black;
+    width: 40%;
   }
   50% {
-    color: #3ab493;
-    transform: translateY(20px);
+    background-color: black;
+    width: 50%;
   }
-}
-
-span {
-  --delay: 0s;
-  animation: arrows 1s var(--delay) infinite ease-in;
+  60% {
+    background-color: black;
+    width: 60%;
+  }
+  70% {
+    background-color: black;
+    width: 70%;
+  }
+  80% {
+    background-color: black;
+    width: 80%;
+  }
+  90% {
+    background-color: black;
+    width: 90%;
+  }
+  100% {
+    background-color: black;
+    width: 100%;
+  }
 }
 </style>

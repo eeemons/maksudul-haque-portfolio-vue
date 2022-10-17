@@ -40,7 +40,7 @@ export default {
     },
   },
   created() {
-    setTimeout(() => (this.showMain = true), 3800);
+    setTimeout(() => (this.showMain = true), 4000);
   },
 };
 </script>

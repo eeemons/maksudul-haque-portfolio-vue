@@ -6,7 +6,9 @@ export default {
 
 <template>
   <div class="container">
-    <h1 data-title="MaksudulHaque" class="text-fill">MaksudulHaque</h1>
+    <h1 data-title="Maksudul&nbsp;Haque" class="text-fill">
+      Maksudul&nbsp;Haque
+    </h1>
   </div>
 </template>
 

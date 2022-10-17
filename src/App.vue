@@ -1,5 +1,12 @@
 <template>
-  <div class="items-container" :class="mode === 'dark' ? 'dark' : 'light'">
+  <div v-show="!showMain" class="preloader">
+    <Preloader />
+  </div>
+  <div
+    v-show="showMain"
+    class="items-container"
+    :class="mode === 'dark' ? 'dark' : 'light'"
+  >
     <AppNavBar :mode="mode" @toggle="toggle" />
     <PortfolioItem :mode="mode" />
     <AboutItem :mode="mode" />
@@ -8,6 +15,7 @@
 </template>
 
 <script>
+import Preloader from "./components/preloader-item.vue";
 import AppNavBar from "./components/nav-bar-item.vue";
 import PortfolioItem from "./components/portfolio-item.vue";
 import AboutItem from "./components/about-item.vue";
@@ -15,10 +23,11 @@ import FooterItem from "./components/footer-item.vue";
 
 export default {
   name: "App",
-  components: { AppNavBar, PortfolioItem, AboutItem, FooterItem },
+  components: { AppNavBar, PortfolioItem, AboutItem, FooterItem, Preloader },
   data() {
     return {
       mode: "lite",
+      showMain: false,
     };
   },
   methods: {
@@ -29,6 +38,9 @@ export default {
         this.mode = "dark";
       }
     },
+  },
+  created() {
+    setTimeout(() => (this.showMain = true), 3800);
   },
 };
 </script>

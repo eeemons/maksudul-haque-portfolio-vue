@@ -15,7 +15,7 @@ export default {
 
 <template>
   <div class="container">
-    <button @click="toggleIsOpen()">Open</button>
+    <button @click="toggleIsOpen()">Details</button>
     <teleport to="body">
       <div class="modal" v-if="isOpen">
         <div class="modal-main-content">

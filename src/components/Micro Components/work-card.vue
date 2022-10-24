@@ -1,10 +1,26 @@
-<script></script>
+<script>
+import ModalItem from "./modal-item.vue";
+
+export default {
+  data() {
+    return {
+      modalShow: false,
+    };
+  },
+  methods: {
+    toggleModalShow() {
+      this.modalShow = true;
+    },
+  },
+  components: { ModalItem },
+};
+</script>
 <template>
   <div class="card-container">
     <div class="img-container"></div>
     <div class="button-grp">
       <button>Live Demo</button>
-      <button>Details</button>
+      <ModalItem />
     </div>
   </div>
 </template>

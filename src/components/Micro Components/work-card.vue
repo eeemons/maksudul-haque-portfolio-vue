@@ -63,4 +63,34 @@ export default {
 .button-grp button:hover {
   color: red;
 }
+
+@media screen and (max-width: 1088px) {
+  .card-container {
+    width: 180px;
+    height: 250px;
+    border: 1px solid #707070;
+    position: relative;
+  }
+  .img-container {
+    width: 117px;
+    height: 93px;
+    border: 1px solid #707070;
+    margin: 20px auto;
+  }
+}
+
+@media screen and (max-width: 718px) {
+  .card-container {
+    width: 150px;
+    height: 250px;
+    border: 1px solid #707070;
+    position: relative;
+  }
+  .img-container {
+    width: 87px;
+    height: 93px;
+    border: 1px solid #707070;
+    margin: 20px auto;
+  }
+}
 </style>

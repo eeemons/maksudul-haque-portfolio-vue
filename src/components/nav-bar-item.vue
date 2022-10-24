@@ -16,7 +16,7 @@ export default {
         <ul class="menu">
           <li>Portfolio</li>
           <li>Works</li>
-          <li>Education</li>
+          <li>Contact</li>
           <li @click="$emit('toggle')" class="mode-switcher">{{ mode }}</li>
         </ul>
       </section>
@@ -28,6 +28,7 @@ export default {
 h1,
 li {
   color: #707070;
+  transition: color 1s ease-in-out;
 }
 
 h1 span {

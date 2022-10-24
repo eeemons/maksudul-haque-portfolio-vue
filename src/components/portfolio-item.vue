@@ -105,4 +105,10 @@ p {
     height: 50px;
   }
 }
+@media screen and (max-width: 600px) {
+  .work-card-section {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 </style>

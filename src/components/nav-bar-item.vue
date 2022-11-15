@@ -1,6 +1,17 @@
 <script>
 export default {
+  data() {
+    return {
+      animation: false,
+    };
+  },
   props: ["mode"],
+  methods: {
+    toggleAnimation() {
+      this.animation = true;
+      setTimeout(() => (this.animation = false), 300);
+    },
+  },
 };
 </script>
 
@@ -13,12 +24,30 @@ export default {
         <label class="menu-button-container" for="menu-toggle">
           <div class="menu-button"></div>
         </label>
+
         <ul class="menu">
           <li>Portfolio</li>
           <li>Works</li>
           <li>Contact</li>
-          <li @click="$emit('toggle')" class="mode-switcher">{{ mode }}</li>
+          <!-- <li @click="$emit('toggle')" class="mode-switcher">{{ mode }}</li> -->
         </ul>
+
+        <div
+          class="square mode-switcher"
+          :class="{ squareAnimation: animation }"
+          @click="
+            $emit('toggle');
+            toggleAnimation();
+          "
+        >
+          <div
+            class="circle"
+            :class="{ circleAnimation: animation }"
+            @click="toggleAnimation()"
+          >
+            {{ mode }}
+          </div>
+        </div>
       </section>
     </nav>
   </div>
@@ -131,6 +160,52 @@ h1 span {
 .dark li {
   color: white;
 }
+
+.dark .circle {
+  color: white;
+  border: 1px solid #777;
+}
+
+.dark .square {
+  color: white;
+  border: 1px solid #777;
+}
+
+.circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid black;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: all 0.6s linear;
+}
+
+.square {
+  width: 75px;
+  height: 30px;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: all 0.6s linear;
+}
+
+.circle:hover {
+  color: red;
+}
+
+.circleAnimation {
+  transform: translate(-50%, -50%) rotateY(200deg);
+}
+
+.squareAnimation {
+  transform: rotateZ(360deg) rotateY(200deg);
+}
+
 @media (max-width: 700px) {
   .menu-button-container {
     display: flex;
